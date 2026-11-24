@@ -45,10 +45,25 @@ namespace LINQ1
 
             #region Q5
             // 5. Get all products that are in stock (UnitsInStock > 0) and belong to the "Condiments" category.
-            var InStockCondiments = Source.ProductList.Where(p => p.UnitsInStock > 0 && p.Category == "Condiments");
-            foreach (var product in InStockCondiments)
+            //var InStockCondiments = Source.ProductList.Where(p => p.UnitsInStock > 0 && p.Category == "Condiments");
+            //foreach (var product in InStockCondiments)
+            //{
+            //    Console.WriteLine(product);
+            //} 
+            #endregion
+
+            #region Q6
+            var AnonymousProducts = Source.ProductList.Select(p => new
+            {
+                Name = p.ProductName,
+                Price = p.UnitPrice,
+                StockStatus = p.UnitsInStock > 0 ? "Availabe" : "OutOfStock"
+            });
+
+            foreach (var product in AnonymousProducts)
             {
                 Console.WriteLine(product);
+
             } 
             #endregion
         }
