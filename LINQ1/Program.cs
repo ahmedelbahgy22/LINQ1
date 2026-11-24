@@ -53,17 +53,31 @@ namespace LINQ1
             #endregion
 
             #region Q6
-            var AnonymousProducts = Source.ProductList.Select(p => new
+            //var AnonymousProducts = Source.ProductList.Select(p => new
+            //{
+            //    Name = p.ProductName,
+            //    Price = p.UnitPrice,
+            //    StockStatus = p.UnitsInStock > 0 ? "Availabe" : "OutOfStock"
+            //});
+
+            //foreach (var product in AnonymousProducts)
+            //{
+            //    Console.WriteLine(product);
+
+            //} 
+            #endregion
+
+            #region Q7
+            //7.Print each product's name along with its position (1-based) 
+            //in the list. Expected format: 1.Chai, 2.Chang, etc.
+            var ProductsWithPosition = Source.ProductList.Select((p, index) => new
             {
-                Name = p.ProductName,
-                Price = p.UnitPrice,
-                StockStatus = p.UnitsInStock > 0 ? "Availabe" : "OutOfStock"
+                Position = index + 1,
+                Name = p.ProductName
             });
-
-            foreach (var product in AnonymousProducts)
+            foreach (var product in ProductsWithPosition)
             {
-                Console.WriteLine(product);
-
+                Console.WriteLine($"{product.Position}. {product.Name}");
             } 
             #endregion
         }
