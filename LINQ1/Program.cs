@@ -36,13 +36,21 @@ namespace LINQ1
 
             #region Q4
             // 4. Get all products where UnitPrice is between 10 and 30.
-            var ProductsBetween10And30 = Source.ProductList.Where(p => p.UnitPrice >= 10 && p.UnitPrice <= 30);
-            foreach (var p in ProductsBetween10And30)
+            //var ProductsBetween10And30 = Source.ProductList.Where(p => p.UnitPrice >= 10 && p.UnitPrice <= 30);
+            //foreach (var p in ProductsBetween10And30)
+            //{
+            //    Console.WriteLine(p);
+            //} 
+            #endregion
+
+            #region Q5
+            // 5. Get all products that are in stock (UnitsInStock > 0) and belong to the "Condiments" category.
+            var InStockCondiments = Source.ProductList.Where(p => p.UnitsInStock > 0 && p.Category == "Condiments");
+            foreach (var product in InStockCondiments)
             {
-                Console.WriteLine(p);
+                Console.WriteLine(product);
             } 
             #endregion
-            // 5. Get all products that are in stock (UnitsInStock > 0) and belong to the "Condiments" category.
         }
     }
 }
