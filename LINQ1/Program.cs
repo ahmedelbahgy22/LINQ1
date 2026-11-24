@@ -1,4 +1,6 @@
 ﻿using LINQ1.DataSource;
+using LINQ1.Models;
+using System.Collections.Generic;
 
 namespace LINQ1
 {
@@ -70,15 +72,30 @@ namespace LINQ1
             #region Q7
             //7.Print each product's name along with its position (1-based) 
             //in the list. Expected format: 1.Chai, 2.Chang, etc.
-            var ProductsWithPosition = Source.ProductList.Select((p, index) => new
+            //var ProductsWithPosition = Source.ProductList.Select((p, index) => new
+            //{
+            //    Position = index + 1,
+            //    Name = p.ProductName
+            //});
+            //foreach (var product in ProductsWithPosition)
+            //{
+            //    Console.WriteLine($"{product.Position}. {product.Name}");
+            //} 
+            #endregion
+
+
+            #region Q11
+            //11. Show position number alongside ProductName 
+            var PostionWithNameOfProduct = Source.ProductList.Select((p, i) => new
             {
-                Position = index + 1,
-                Name = p.ProductName
+                Pos = i + 1,
+                ProductName = p.ProductName,
             });
-            foreach (var product in ProductsWithPosition)
+            foreach (var Product in PostionWithNameOfProduct)
             {
-                Console.WriteLine($"{product.Position}. {product.Name}");
-            } 
+                Console.WriteLine($"{Product.Pos}. {Product.ProductName}");
+            }
+
             #endregion
         }
     }
