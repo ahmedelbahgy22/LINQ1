@@ -17,14 +17,22 @@ namespace LINQ1
 
             #region Q2
             // 2. Get a list of only the product names from ProductList. Print each name.
-            var ProudctNames = Source.ProductList.Select(p => p.ProductName);
-            foreach (var name in ProudctNames)
-            {
-                Console.WriteLine(name);
-            }
+            //var ProudctNames = Source.ProductList.Select(p => p.ProductName);
+            //foreach (var name in ProudctNames)
+            //{
+            //    Console.WriteLine(name);
+            //}
 
-            #endregion            
+            #endregion
+
+            #region Q3
             // 3. Sort all products by UnitPrice (ascending). Print each product's name and price.
+            var SortedProducts = Source.ProductList.OrderBy(p => p.UnitPrice);
+            foreach (var Product in SortedProducts)
+            {
+                Console.WriteLine($"{Product.ProductName} - {Product.UnitPrice}$");
+            } 
+            #endregion
             // 4. Get all products where UnitPrice is between 10 and 30.
             // 5. Get all products that are in stock (UnitsInStock > 0) and belong to the "Condiments" category.
         }
