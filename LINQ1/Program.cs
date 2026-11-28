@@ -192,9 +192,18 @@ namespace LINQ1
             #endregion
 
             #region Q16
-            //16. Get the first product whose price is greater than $50. 
-            var FirstProductGreaterThan50 = Source.ProductList.First(p => p.UnitPrice > 50);
-            Console.WriteLine(FirstProductGreaterThan50);
+            //16. Get the first product whose price is greater than $50.
+
+            //var FirstProductGreaterThan50 = Source.ProductList.First(p => p.UnitPrice > 50);
+            //Console.WriteLine(FirstProductGreaterThan50);
+            #endregion
+
+            #region Q17
+            //17. Try to get the first product with a price > $500.  it returns null 
+            //instead of throwing.
+
+            var FirstProductGreaterThan500 = Source.ProductList.FirstOrDefault(p => p.UnitPrice > 500);
+            Console.WriteLine(FirstProductGreaterThan500);
             #endregion
             #endregion
 
