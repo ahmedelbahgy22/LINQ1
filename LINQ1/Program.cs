@@ -145,14 +145,31 @@ namespace LINQ1
             #region Q12
             /*12. Sort first by-word length and then by a 
             case-insensitive sort of the words in an array.*/
-            String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
-            var SortedWords = Arr.OrderBy(w => w.Length).
-                              ThenBy(w => w, StringComparer.OrdinalIgnoreCase);
-            foreach (var word in SortedWords)
+
+
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var SortedWords = Arr.OrderBy(w => w.Length).
+            //                  ThenBy(w => w, StringComparer.OrdinalIgnoreCase);
+            //foreach (var word in SortedWords)
+            //{
+            //    Console.WriteLine(word);
+            //}
+            #endregion
+
+            #region Q13
+            /*13. Create a list of all digits in the array whose second 
+                    letter is 'i' that is reversed from the order in the 
+                    original array. */
+
+
+            string[] DigitsArr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+            var NewDigitsArr = DigitsArr.Where(x => x[1] == 'i').Reverse();
+            foreach (var digit in NewDigitsArr)
             {
-                Console.WriteLine(word);
+                Console.WriteLine(digit);
             }
             #endregion
+
 
         }
     }
