@@ -8,6 +8,7 @@ namespace LINQ1
     {
         static void Main(string[] args)
         {
+            #region AssignmentOne
             #region Q1
             // 1. Get all products from the "Seafood" category. Print each product's name and price.
             //var SeacFoodProducts = Source.ProductList.Where(p => p.Category == "Seafood");
@@ -162,13 +163,18 @@ namespace LINQ1
                     original array. */
 
 
-            string[] DigitsArr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-            var NewDigitsArr = DigitsArr.Where(x => x[1] == 'i').Reverse();
-            foreach (var digit in NewDigitsArr)
-            {
-                Console.WriteLine(digit);
-            }
+            //string[] DigitsArr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+            //var NewDigitsArr = DigitsArr.Where(x => x[1] == 'i').Reverse();
+            //foreach (var digit in NewDigitsArr)
+            //{
+            //    Console.WriteLine(digit);
+            //}
+            #endregion 
             #endregion
+
+
+
+
 
 
         }
