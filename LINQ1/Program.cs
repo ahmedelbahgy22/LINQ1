@@ -99,12 +99,31 @@ namespace LINQ1
             /*9. Get all products from the "Beverages" category, sorted by 
             UnitsInStock descending. Print name and stock.*/
 
-            var BeveragesProducts = Source.ProductList
-                                    .Where(p => p.Category == "Beverages")
-                                    .OrderByDescending(p => p.UnitsInStock);
-            foreach (var product in BeveragesProducts)
+            //var BeveragesProducts = Source.ProductList
+            //                        .Where(p => p.Category == "Beverages")
+            //                        .OrderByDescending(p => p.UnitsInStock);
+            //foreach (var product in BeveragesProducts)
+            //{
+            //    Console.WriteLine($"{product.ProductName} - {product.UnitsInStock}");
+            //}
+            #endregion
+
+            #region Q10
+            /*10. Using QUERY SYNTAX with a compound from clause, list 
+                all orders placed in 1997 or later showing CustomerID and 
+                OrderDate.*/
+
+            var OrdersIn1997OrLater = from customer in Source.CustomerList
+                                      from order in customer.Orders
+                                      where order.OrderDate.Year >= 1997
+                                      select new
+                                      {
+                                          CustomerID = customer.CustomerID,
+                                          OrderDate = order.OrderDate
+                                      };
+            foreach (var order in OrdersIn1997OrLater)
             {
-                Console.WriteLine($"{product.ProductName} - {product.UnitsInStock}");
+                Console.WriteLine($"CustomerID: {order.CustomerID}, OrderDate: {order.OrderDate.ToShortDateString()}");
             }
             #endregion
 
