@@ -185,10 +185,16 @@ namespace LINQ1
             #region Q11
             //11. Find the CHEAPEST and MOST EXPENSIVE product prices
 
-            var Cheapest = Source.ProductList.Min(p => p.UnitPrice);
-            var MostExpensive = Source.ProductList.Max(p => p.UnitPrice);
-            Console.WriteLine($"Cheapest = {Cheapest}");
-            Console.WriteLine($"MostExpensive = {MostExpensive}");
+            //var Cheapest = Source.ProductList.Min(p => p.UnitPrice);
+            //var MostExpensive = Source.ProductList.Max(p => p.UnitPrice);
+            //Console.WriteLine($"Cheapest = {Cheapest}");
+            //Console.WriteLine($"MostExpensive = {MostExpensive}");
+            #endregion
+
+            #region Q16
+            //16. Get the first product whose price is greater than $50. 
+            var FirstProductGreaterThan50 = Source.ProductList.First(p => p.UnitPrice > 50);
+            Console.WriteLine(FirstProductGreaterThan50);
             #endregion
             #endregion
 
