@@ -83,20 +83,33 @@ namespace LINQ1
             //} 
             #endregion
 
+            #region Q8
+            /*8. Sort ProductList by Category ascending, then within each 
+                 category, sort by UnitPrice descending.*/
+            var SortedProducts = Source.ProductList.OrderBy(p => p.Category)
+                                .ThenByDescending(p => p.UnitPrice);
+            foreach (var product in SortedProducts)
+            {
+                Console.WriteLine(product);
+            }
+            #endregion
 
             #region Q11
             //11. Show position number alongside ProductName 
-            var PostionWithNameOfProduct = Source.ProductList.Select((p, i) => new
-            {
-                Pos = i + 1,
-                ProductName = p.ProductName,
-            });
-            foreach (var Product in PostionWithNameOfProduct)
-            {
-                Console.WriteLine($"{Product.Pos}. {Product.ProductName}");
-            }
+            //var PostionWithNameOfProduct = Source.ProductList.Select((p, i) => new
+            //{
+            //    Pos = i + 1,
+            //    ProductName = p.ProductName,
+            //});
+            //foreach (var Product in PostionWithNameOfProduct)
+            //{
+            //    Console.WriteLine($"{Product.Pos}. {Product.ProductName}");
+            //}
 
             #endregion
+
+
+
         }
     }
 }
