@@ -113,18 +113,18 @@ namespace LINQ1
                 all orders placed in 1997 or later showing CustomerID and 
                 OrderDate.*/
 
-            var OrdersIn1997OrLater = from customer in Source.CustomerList
-                                      from order in customer.Orders
-                                      where order.OrderDate.Year >= 1997
-                                      select new
-                                      {
-                                          CustomerID = customer.CustomerID,
-                                          OrderDate = order.OrderDate
-                                      };
-            foreach (var order in OrdersIn1997OrLater)
-            {
-                Console.WriteLine($"CustomerID: {order.CustomerID}, OrderDate: {order.OrderDate.ToShortDateString()}");
-            }
+            //var OrdersIn1997OrLater = from customer in Source.CustomerList
+            //                          from order in customer.Orders
+            //                          where order.OrderDate.Year >= 1997
+            //                          select new
+            //                          {
+            //                              CustomerID = customer.CustomerID,
+            //                              OrderDate = order.OrderDate
+            //                          };
+            //foreach (var order in OrdersIn1997OrLater)
+            //{
+            //    Console.WriteLine($"CustomerID: {order.CustomerID}, OrderDate: {order.OrderDate.ToShortDateString()}");
+            //}
             #endregion
 
             #region Q11
@@ -142,6 +142,17 @@ namespace LINQ1
             #endregion
 
 
+            #region Q12
+            /*12. Sort first by-word length and then by a 
+            case-insensitive sort of the words in an array.*/
+            String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            var SortedWords = Arr.OrderBy(w => w.Length).
+                              ThenBy(w => w, StringComparer.OrdinalIgnoreCase);
+            foreach (var word in SortedWords)
+            {
+                Console.WriteLine(word);
+            }
+            #endregion
 
         }
     }
