@@ -175,7 +175,12 @@ namespace LINQ1
 
             #region AssignmentTwo
 
-            
+            #region Q10
+            //10. Calculate the total number of units in stock across all products 
+
+            var TotalUnitsInStock  = Source.ProductList.Sum(p => p.UnitsInStock);
+            Console.WriteLine(TotalUnitsInStock);
+            #endregion
             #endregion
 
 
